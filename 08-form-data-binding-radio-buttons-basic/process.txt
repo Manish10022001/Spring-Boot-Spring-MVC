@@ -1,0 +1,68 @@
+
+
+...............................................................
+...............................................................
+2Reading data from spring mvc :hello world form
+    ->Development process
+        2.1.Create controller class
+        2.2.Show HTML Form
+            -create controller method to show HTML Form
+            -Create view page for html form
+        2.3.Process HTML form
+            -create controller method to process HTMl form
+            -develop view page for confirmation
+................................................................
+................................................................
+3. add data to model
+    ->want to create a new method to process form data
+    ->read that form data: student's name
+    ->convert the name to upper case
+    ->add the uppercase version to the model
+
+........................................................................
+.......................................................................
+4.Reading HTML form data with @RequestParam annotation, binding data with request param
+
+..........................................................................
+...........................................................................
+5. @GetMapping and @PostMapping
+    ->@RequestMapping works for all methods, i.e get,post.etc. it will work for all
+    ->@GetMapping only works for get method -> in .html when method is get ,in url we get all the filled information
+
+    ->@PostMapping only works for post method -> change method to post in html , so in url we only get the method name no info
+
+............................................................................................
+.............................................................................................
+6. Form data binding by building text fields
+    ->Development Process
+        -6.1 Create Student class -> first create modal and then Student class
+                ->created field,no-args construtor and getter and setter methods
+        -6.2 Create student controller class
+                ->method for showing form
+                    ->creaete a student object
+                    ->add student object to the modal
+                ->
+        -Create HTML form
+        -Create form processing code
+        -Create confirmation page
+.....................................................................................
+.....................................................................................
+7. Form data binding - dropdownlist basic
+    ->Development process
+        -7.1 Update HTML form
+        -7.2 Update student class - add getter/setter for new property
+        -7.3 Update confirmation pagee
+........................................................................................
+8. Form data binding - dropdownlist reading list of countries from application.properties
+    ->Development process
+        -Add list of countries to application.properties file
+        -inject the countries in the studentcontroller using @Value
+        -Add the list of countries to the model
+        -In html form generate list of <option>tags for the countries
+
+.............................................................................................
+9. Form data binding - radio buttons basic
+    ->Development process
+        -update html form
+        -update student class-add getter and setter for new property
+        -update confirmation page
