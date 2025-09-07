@@ -1,0 +1,30 @@
+Validation
+Need for validation
+    -check user input form for
+        ->required fields
+        ->valid numbers in a range
+        ->valid format(postal code)
+        ->custom business rule
+
+Road Map
+    1.set up development environment
+    2.required field
+    3.validate number range:min, max
+    4.validate using regular expression (regexp)
+    5.custom validation
+
+.............................................................................................................
+1.Required Field validataion
+    ->Development Process
+        -Create customer class and validation rules
+        -add controller code to show html form
+        -develop html form and add validation support
+        -perform validation in the Controller class
+        -Create confirmation page
+
+    issue: it has one issue i.e if we just gave spaces or whitespace still form is submited, instead of this we should have gotten an erro
+................................................................................................................................
+2. to resolve the issue of whitespaces using @initBinder
+    ->@InitBinder annotation works as pre-processor, it will pre-process each web request to our controller. and
+      method annotated with @InitBinder is executed.
+    -> use this to tring strings and if string has only white spaces , trim it to null
