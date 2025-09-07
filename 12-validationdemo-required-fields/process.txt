@@ -1,0 +1,23 @@
+Validation
+Need for validation
+    -check user input form for
+        ->required fields
+        ->valid numbers in a range
+        ->valid format(postal code)
+        ->custom business rule
+
+Road Map
+    1.set up development environment
+    2.required field
+    3.validate number range:min, max
+    4.validate using regular expression (regexp)
+    5.custom validation
+
+.............................................................................................................
+1.Required Field validataion
+    ->Development Process
+        -Create customer class and validation rules
+        -add controller code to show html form
+        -develop html form and add validation support
+        -perform validation in the Controller class
+        -Create confirmation page
