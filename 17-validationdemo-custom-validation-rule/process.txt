@@ -1,0 +1,74 @@
+Validation
+Need for validation
+    -check user input form for
+        ->required fields
+        ->valid numbers in a range
+        ->valid format(postal code)
+        ->custom business rule
+
+Road Map
+    1.set up development environment
+    2.required field
+    3.validate number range:min, max
+    4.validate using regular expression (regexp)
+    5.custom validation
+
+.............................................................................................................
+1.Required Field validataion
+    ->Development Process
+        -Create customer class and validation rules
+        -add controller code to show html form
+        -develop html form and add validation support
+        -perform validation in the Controller class
+        -Create confirmation page
+
+    issue: it has one issue i.e if we just gave spaces or whitespace still form is submited, instead of this we should have gotten an erro
+................................................................................................................................
+2. to resolve the issue of whitespaces using @initBinder
+    ->@InitBinder annotation works as pre-processor, it will pre-process each web request to our controller. and
+      method annotated with @InitBinder is executed.
+    -> use this to tring strings and if string has only white spaces , trim it to null
+.............................................................................................................................................
+
+3.Validate a number range
+    ->add a new input field on our form for : Free Passes
+    ->user can only enter in rage : 0 tp 10
+
+    ->Development Process
+        -3.1 add validation rule to customer class
+        -3.2 display error message on html form
+        -3.3 perform validation in the controller class -> no need to make changes it is is already there and if ok to use of this as well
+        -3.4 update confirmation page
+...............................................................................................................................................
+
+4.Validate a Postal Code
+    ->add new input field on our form for: Postal Code
+    ->User can only enter 4 chars/digits
+    ->apply regular expression
+
+    ->Development Process
+        -4.1 add validation rule to customer class
+        -4.2 display error messages on html form
+        -4.3 update confirmation page
+..................................................................................................................................
+5.1 Make integer field required -> i.e in free pass if no integer given then need to give error "is required"
+    ->just need to copy and past @NotNull above free pass field
+    -> but this gives error:  Failed to convert property value of type java.lang.String to required type int for property freePasses; For input string: ""
+                                     i.e can't convert string to integer
+    -> so to resolve it we change the datatype int to wrapper class Integer also make change in getter and setter to integrate wrapper class
+
+5.2 Handle String input for integer fields
+    -> in free passes if given string it give type mismatch error again,, so
+    ->Development process
+        ->Create our own custom error message
+            ->src/resources/messages.properties : this location and name is very important
+.....................................................................................................................................
+
+6. Create Custom Annotation from scratch
+    ->Development Process
+        ->Create custom validation rule
+            -Create @CourseCode annotation
+            -Create CourseCodeConstraintValidator : it is a helper class it contains our custom business logic of validation
+        ->Add validation rule to Customer class
+        ->Display error messages on HTML Form
+        ->Update confirmation page
